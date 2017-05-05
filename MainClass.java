@@ -10,7 +10,7 @@ public class MainClass {
 		int sayi1 = 0;
 		int sayi2 = 0;
 		for (int i = 0; i < postfix.length(); i++) {
-			// Operatör
+			// OperatÃ¶r
 			if (postfix.charAt(i) == '+' || postfix.charAt(i) == '-' || postfix.charAt(i) == '*'
 					|| postfix.charAt(i) == '/' || postfix.charAt(i) == '^') {
 				sayi1 = Integer.parseInt(ms.pop());
@@ -65,14 +65,14 @@ public class MainClass {
 					|| s.charAt(i) == '^') {
 				islem = getOncelik(s.charAt(i));
 				bas = getOncelik(ls.getBas());
-				// parantez açma var ise push
-				// yığın boş ise push
-				// stackde operator varsa öncelik karşılaştırılır
-				// okunan operator stackdeki operatorde düşük veya eşit
-				// öncelikli ise
+				// parantez aÃ§ma var ise push
+				// yÄ±ÄŸÄ±n boÃ¾ ise push
+				// stackde operator varsa Ã¶ncelik karÅŸÄ±laÅŸtÄ±rÄ±lÄ±r
+				// okunan operator stackdeki operatorde dÃ¼ÅŸÃ¼k veya eÅŸit
+				// Ã¶ncelikli ise
 				// stackdekilerin hepsi postfixe okunan stack'e
-				// okunan operator stackdeki operatorden yüksek öncelikli ise
-				// okunan stackdekinin üstüne push
+				// okunan operator stackdeki operatorden yÃ¼ksek Ã¶ncelikli ise
+				// okunan stackdekinin Ã¼stÃ¼ne push
 				if (ls.getBas() == '(' || ls.getBas() == ' ') {
 					ls.push(s.charAt(i));
 				} else if (islem > bas) {
@@ -140,8 +140,8 @@ public class MainClass {
 			} else if (s.charAt(i) == '(') {
 				ls.push(s.charAt(i));
 			} else if (s.charAt(i) == ')') {
-				// parantez açmaya kadar bütün stackler pop edilip postfixe
-				// sonra parantez aç çıkarılır
+				// parantez aÃ§maya kadar bÃ¼tÃ¼n stackler pop edilip postfixe
+				// sonra parantez aÃ§ Ã§Ä±karÄ±lÄ±r
 				while (true) {
 					c = ls.pop();
 					if (c == '(' || c == ' ') {
@@ -154,7 +154,7 @@ public class MainClass {
 				postfix += s.charAt(i);
 			}
 		}
-		// döngü bittiğinde sırayla pop yapılarak postfixe eklenir
+		// dÃ¶ngÃ¼ bittiÄŸinde sÄ±rayla pop yapÄ±larak postfixe eklenir
 		while (true) {
 			c = ls.getBas();
 			if (c != ' ') {
